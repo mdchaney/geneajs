@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/djfun/geneajs.git"
+    "url": "git://github.com/corupta/geneajs.git"
   },
   "author": "Martin Kaistra",
   "license": "LGPL 3 or later",
   "bugs": {
-    "url": "https://github.com/djfun/geneajs/issues"
+    "url": "https://github.com/corupta/geneajs/issues"
   },
-  "homepage": "https://github.com/djfun/geneajs",
+  "homepage": "https://github.com/corupta/geneajs",
   "devDependencies": {
     "nodeunit": "latest"
   },
