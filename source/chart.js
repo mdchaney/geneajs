@@ -550,24 +550,24 @@ ChartHelper = {
 
       if (inElement.spouses) {
         inElement.spouses.forEach(function(spouse, spouse_ind, spouses) {
-          if (spouse.children) {
-            lines.push({
-              left: inElement.left + (ChartHelper.width / 2),
-              top: inElement.top + ChartHelper.height + 2,
-              data: {
-                orientation: "vertical",
-                len: ChartHelper.spacing_v
-              }
-            });
+          lines.push({
+            left: inElement.left + (ChartHelper.width / 2),
+            top: inElement.top + ChartHelper.height + 2,
+            data: {
+              orientation: "vertical",
+              len: ChartHelper.spacing_v
+            }
+          });
 
-            lines.push({
-              left: spouse.left + (ChartHelper.width / 2),
-              top: spouse.top + ChartHelper.height + 2,
-              data: {
-                orientation: "vertical",
-                len: ChartHelper.spacing_v
-              }
-            });
+          lines.push({
+            left: spouse.left + (ChartHelper.width / 2),
+            top: spouse.top + ChartHelper.height + 2,
+            data: {
+              orientation: "vertical",
+              len: ChartHelper.spacing_v
+            }
+          });
+          if (spouse.children) {
             spouse.children.forEach(function(child, child_ind, children) {
               lines.push({
                 left: child.left + (ChartHelper.width / 2),
@@ -615,6 +615,15 @@ ChartHelper = {
                 }
               });
             }
+			 } else {
+            lines.push({
+              left: inElement.left + (ChartHelper.width / 2),
+              top: inElement.top + ChartHelper.height + 2 + ChartHelper.spacing_v,
+              data: {
+                orientation: "horizontal",
+                len: ChartHelper.width + ChartHelper.spacing
+              }
+            });
           }
           // draw additional lines, if there is more than one spouse
           if (spouse_ind > 0) {
@@ -666,7 +675,7 @@ ChartHelper = {
         if (!spouse.children || spouse.children.length === 0) {
           maxWidth+= 1;
           if (spouse_ind === 0) {
-            // maxWidth+= 1;
+            maxWidth+= 1;
           }
           returnSpouses[returnSpouses.length] = {
             data: spouse.data
